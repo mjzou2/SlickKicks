@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button enterButton = findViewById(R.id.enterButton);
-        enterButton.setOnClickListener(unused -> startActivity(new Intent(this, GenderActivity.class)));
-        finish();
+        Intent intent = new Intent(this, GenderActivity.class);
+        enterButton.setOnClickListener(unused -> startActivity(intent));
     }
 }
