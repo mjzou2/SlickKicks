@@ -8,11 +8,11 @@
 
     <Button
         android:id="@+id/Next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="67dp"
         android:text="Next"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar4" />
+        app:layout_constraintTop_toBottomOf="@+id/size" />
 
     <TextView
         android:id="@+id/Price"
@@ -26,26 +26,40 @@
         android:id="@+id/shoeSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
         android:text="Shoe Size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="215dp" />
 
     <SeekBar
-        android:id="@+id/seekBar3"
+        android:id="@+id/price"
         android:layout_width="155dp"
         android:layout_height="73dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <SeekBar
-        android:id="@+id/seekBar4"
+        android:id="@+id/size"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="155dp"
         android:layout_height="80dp"
-        android:max="10"
-        android:progress="3"
+        android:layout_marginTop="120dp"
+        android:indeterminate="false"
+        android:longClickable="false"
+        android:max="14"
+        android:overScrollMode="ifContentScrolls"
+        android:progress="1"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+        app:layout_constraintTop_toBottomOf="@+id/price" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -83,4 +97,5 @@
             android:text="Under Armour" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
