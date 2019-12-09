@@ -1,5 +1,10 @@
 package com.example.slickkicks;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+
 import java.net.URL;
 
 public class Shoe {
@@ -8,12 +13,14 @@ public class Shoe {
     private int price;
     private String gender;
     private String url;
+    private int imageID;
     public Shoe(String b, String n, int p, String g, String u) {
         brand = b;
         name = n;
         price = p;
         gender = g;
         url = u;
+        imageID = R.drawable.male_stan_smith;
     }
     public String getBrand() {
         return brand;
