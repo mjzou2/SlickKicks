@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".DisplayActivity">
 
-    <WebView
-        android:id="@+id/temp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <LinearLayout
-        android:id="@+id/list"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
