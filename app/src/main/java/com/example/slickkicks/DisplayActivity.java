@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -30,6 +31,12 @@ public class DisplayActivity extends AppCompatActivity {
         LinearLayout list = findViewById(R.id.list);
         for(Shoe shoe : shoes) {
             View shoeChunk = getLayoutInflater().inflate(R.layout.chunk_shoe, list, false);
+            TextView brand = shoeChunk.findViewById(R.id.shoeBrand);
+            brand.setText(shoe.getBrand());
+            TextView name = shoeChunk.findViewById(R.id.shoeName);
+            name.setText(shoe.getName());
+            TextView price = shoeChunk.findViewById(R.id.shoePrice);
+            price.setText("$" + Integer.toString(shoe.getPrice()));
             list.addView(shoeChunk);
         }
     }

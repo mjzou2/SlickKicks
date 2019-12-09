@@ -9,7 +9,7 @@ public class Shoe {
     private String gender;
     private String url;
     public Shoe(String b, String n, int p, String g, String u) {
-        brand = brand;
+        brand = b;
         name = n;
         price = p;
         gender = g;
