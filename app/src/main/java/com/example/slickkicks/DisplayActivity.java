@@ -24,19 +24,18 @@ public class DisplayActivity extends AppCompatActivity {
     private Shoe[] shoes;
     OptionsActivity mo = new OptionsActivity();
     FOptionsActivity fo = new FOptionsActivity();
+//    TextView textView = findViewById(R.id.textView);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display);
         initShoeDatabase();
-        displayShoes();
         brand();
+        setContentView(R.layout.activity_display);
 
 
     }
-    public void displayShoes() {
+    public void displayShoes(Shoe shoe) {
         LinearLayout list = findViewById(R.id.list);
-        for(Shoe shoe : shoes) {
             View shoeChunk = getLayoutInflater().inflate(R.layout.chunk_shoe, list, false);
             TextView brand = shoeChunk.findViewById(R.id.shoeBrand);
             brand.setText(shoe.getBrand());
@@ -45,7 +44,7 @@ public class DisplayActivity extends AppCompatActivity {
             TextView price = shoeChunk.findViewById(R.id.shoePrice);
             price.setText("$" + Integer.toString(shoe.getPrice()));
             list.addView(shoeChunk);
-        }
+
     }
     public void initShoeDatabase() {
         shoes = new Shoe[]{
@@ -131,9 +130,11 @@ public class DisplayActivity extends AppCompatActivity {
         };
     }
     public void brand() {
+
         if (mo.getU() || fo.getU()) {
             for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getBrand() == "UA") {
+                if (shoes[i].getBrand() == "Under Armour") {
+
                     unbrand();
                 }
             }
@@ -142,6 +143,7 @@ public class DisplayActivity extends AppCompatActivity {
             for (int i = 0; i < shoes.length; i++) {
                 if (shoes[i].getBrand() == "Adidas") {
                     unbrand();
+//                    textView.setText("adidas");
                 }
             }
         }
@@ -155,22 +157,21 @@ public class DisplayActivity extends AppCompatActivity {
     }
     public void unbrand() {
         for (int i = 0; i < shoes.length; i++) {
-            if (shoes[i].getGender() == "male") {
-                if (shoes[i].getSize() == mo.getSize()) {
+            if (shoes[i].getGender() == "Male") {
                     if (shoes[i].getPrice() <= mo.getPrice()) {
-                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
-                        viewActivity.goIn();
+                        displayShoes(shoes[i]);
+//                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
+//                        viewActivity.goIn();
+                    }
+            }
+            if (shoes[i].getGender() == "Female") {
+                    if (shoes[i].getPrice() <= fo.getPrice()) {
+                        displayShoes(shoes[i]);
+//                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
+//                        viewActivity.goIn();
                     }
                 }
-            }
-            if (shoes[i].getGender() == "female") {
-                if (shoes[i].getSize() == fo.getSize()) {
-                    if (shoes[i].getPrice() <= fo.getSize()) {
-                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
-                        viewActivity.goIn();
-                    }
-                }
-            }
+
         }
     }
 }

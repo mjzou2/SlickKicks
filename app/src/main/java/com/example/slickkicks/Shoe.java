@@ -8,14 +8,12 @@ public class Shoe {
     private int price;
     private String gender;
     private String url;
-    private int size;
     public Shoe(String b, String n, int p, String g, String u) {
         brand = b;
         name = n;
         price = p;
         gender = g;
         url = u;
-        size = size;
     }
     public String getBrand() {
         return brand;
@@ -32,7 +30,5 @@ public class Shoe {
     public String getUrl() {
         return url;
     }
-    public int getSize() {
-        return size;
-    }
+
 }
