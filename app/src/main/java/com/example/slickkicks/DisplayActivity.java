@@ -10,6 +10,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -19,12 +21,17 @@ import java.net.URL;
 public class DisplayActivity extends AppCompatActivity {
 
     private Shoe[] shoes;
+    OptionsActivity mo = new OptionsActivity();
+    FOptionsActivity fo = new FOptionsActivity();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
         initShoeDatabase();
         displayShoes();
+        brand();
+
+
     }
     public void displayShoes() {
         LinearLayout list = findViewById(R.id.list);
@@ -51,5 +58,48 @@ public class DisplayActivity extends AppCompatActivity {
 
                 new Shoe("Adidas", "Stan Smith", 80, "Female", "https://www.adidas.com/us/stan-smith-shoes/B24105.html"),
         };
+    }
+    public void brand() {
+        if (mo.getU() || fo.getU()) {
+            for (int i = 0; i < shoes.length; i++) {
+                if (shoes[i].getBrand() == "UA") {
+                    unbrand();
+                }
+            }
+        }
+        if (mo.getA() || fo.getA()) {
+            for (int i = 0; i < shoes.length; i++) {
+                if (shoes[i].getBrand() == "Adidas") {
+                    unbrand();
+                }
+            }
+        }
+        if (mo.getN() || fo.getN()) {
+            for (int i = 0; i < shoes.length; i++) {
+                if (shoes[i].getBrand() == "Nike") {
+                    unbrand();
+                }
+            }
+        }
+    }
+    public void unbrand() {
+        for (int i = 0; i < shoes.length; i++) {
+            if (shoes[i].getGender() == "male") {
+                if (shoes[i].getSize() == mo.getSize()) {
+                    if (shoes[i].getPrice() <= mo.getPrice()) {
+                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
+                        viewActivity.goIn();
+                    }
+                }
+            }
+            if (shoes[i].getGender() == "female") {
+                if (shoes[i].getSize() == fo.getSize()) {
+                    if (shoes[i].getPrice() <= fo.getSize()) {
+                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
+                        viewActivity.goIn();
+                    }
+                }
+            }
+        }
     }
 }
