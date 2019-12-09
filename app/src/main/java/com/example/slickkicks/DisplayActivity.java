@@ -24,18 +24,22 @@ public class DisplayActivity extends AppCompatActivity {
     private Shoe[] shoes;
     OptionsActivity mo = new OptionsActivity();
     FOptionsActivity fo = new FOptionsActivity();
+    GenderActivity genderActivity = new GenderActivity();
 //    TextView textView = findViewById(R.id.textView);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initShoeDatabase();
-        brand();
         setContentView(R.layout.activity_display);
+        initShoeDatabase();
+        search();
+        displayShoes();
+//        initShoeDatabase();
 
 
     }
-    public void displayShoes(Shoe shoe) {
+    public void displayShoes() {
         LinearLayout list = findViewById(R.id.list);
+        for(Shoe shoe: shoes) {
             View shoeChunk = getLayoutInflater().inflate(R.layout.chunk_shoe, list, false);
             TextView brand = shoeChunk.findViewById(R.id.shoeBrand);
             brand.setText(shoe.getBrand());
@@ -44,6 +48,7 @@ public class DisplayActivity extends AppCompatActivity {
             TextView price = shoeChunk.findViewById(R.id.shoePrice);
             price.setText("$" + Integer.toString(shoe.getPrice()));
             list.addView(shoeChunk);
+        }
 
     }
     public void initShoeDatabase() {
@@ -129,49 +134,48 @@ public class DisplayActivity extends AppCompatActivity {
                 new Shoe("Under Armour", "HOVR Infinite Camo", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-infinite-camo/pid3022503-100"),
         };
     }
-    public void brand() {
 
-        if (mo.getU() || fo.getU()) {
+    public void search() {
+        int num = 0;
+        if (genderActivity.getmaleClicked()) {
             for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getBrand() == "Under Armour") {
-
-                    unbrand();
-                }
-            }
-        }
-        if (mo.getA() || fo.getA()) {
-            for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getBrand() == "Adidas") {
-                    unbrand();
-//                    textView.setText("adidas");
-                }
-            }
-        }
-        if (mo.getN() || fo.getN()) {
-            for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getBrand() == "Nike") {
-                    unbrand();
-                }
-            }
-        }
-    }
-    public void unbrand() {
-        for (int i = 0; i < shoes.length; i++) {
-            if (shoes[i].getGender() == "Male") {
-                    if (shoes[i].getPrice() <= mo.getPrice()) {
-                        displayShoes(shoes[i]);
-//                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
-//                        viewActivity.goIn();
+                if (shoes[i].getGender() == "Female") {
+                    shoes[i] = null;
+                } else{
+                    if (mo.getU() == false && shoes[i].getBrand() == "Under Armour") {
+                        shoes[i] = null;
                     }
-            }
-            if (shoes[i].getGender() == "Female") {
-                    if (shoes[i].getPrice() <= fo.getPrice()) {
-                        displayShoes(shoes[i]);
-//                        ViewActivity viewActivity = new ViewActivity(shoes[i].getUrl());
-//                        viewActivity.goIn();
+                    if (mo.getA() == false && shoes[i].getBrand() == "Adidas") {
+                        shoes[i] = null;
+                    }
+                    if (mo.getN() == false && shoes[i].getBrand() == "Nike") {
+                        shoes[i] = null;
+                    }
+                    if (mo.getPrice() < shoes[i].getPrice()) {
+                        shoes[i] = null;
                     }
                 }
-
+            }
+        }
+        if (genderActivity.getfemaleClicked()) {
+            for (int i = 0; i < shoes.length; i++) {
+                if (shoes[i].getGender() == "Male") {
+                    shoes[i] = null;
+                } else{
+                    if (fo.getU() == false && shoes[i].getBrand() == "Under Armour") {
+                        shoes[i] = null;
+                    }
+                    if (fo.getA() == false && shoes[i].getBrand() == "Adidas") {
+                        shoes[i] = null;
+                    }
+                    if (fo.getN() == false && shoes[i].getBrand() == "Nike") {
+                        shoes[i] = null;
+                    }
+                    if (fo.getPrice() < shoes[i].getPrice()) {
+                        shoes[i] = null;
+                    }
+                }
+            }
         }
     }
 }
