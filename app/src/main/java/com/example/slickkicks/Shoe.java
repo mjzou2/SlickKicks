@@ -1,17 +1,19 @@
 package com.example.slickkicks;
 
+import java.net.URL;
+
 public class Shoe {
     private String brand;
     private String name;
     private int price;
-    private int size;
     private String gender;
-    public Shoe(String b, String n, int p, int s, String g) {
-        brand = b;
+    private String url;
+    public Shoe(String b, String n, int p, String g, String u) {
+        brand = brand;
         name = n;
         price = p;
-        size = s;
         gender = g;
+        url = u;
     }
     public String getBrand() {
         return brand;
@@ -22,10 +24,10 @@ public class Shoe {
     public int getPrice() {
         return price;
     }
-    public int getSize() {
-        return size;
-    }
     public String getGender() {
         return gender;
+    }
+    public String getUrl() {
+        return url;
     }
 }
