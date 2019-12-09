@@ -94,6 +94,7 @@ public class FOptionsActivity extends AppCompatActivity {
     public int getSize() {
         return size;
     }
+    public int getGender() {return 1;}
     public int getPrice() {
         return price;
     }

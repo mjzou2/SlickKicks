@@ -97,4 +97,7 @@ public class OptionsActivity extends AppCompatActivity {
     public int getPrice() {
         return price;
     }
+    public int getGender() {
+        return 0;
+    }
 }
