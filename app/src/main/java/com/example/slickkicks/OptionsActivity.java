@@ -52,5 +52,8 @@ public class OptionsActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"", Toast.LENGTH_SHORT).show();
             }
         });
+        Button next = findViewById(R.id.Next);
+        Intent intent = new Intent(this, DisplayActivity.class);
+        next.setOnClickListener(unused -> startActivity(intent));
     }
 }

@@ -2,30 +2,34 @@ package com.example.slickkicks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import java.io.InputStream;
 import java.net.URL;
 
 public class DisplayActivity extends AppCompatActivity {
 
-    private Shoe[] shoes = new Shoe[0];
+    private Shoe[] shoes = new Shoe[2];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-        ImageView image = findViewById(R.id.image);
-        image.setImageDrawable(LoadImageFromWebOperations("https://assets.adidas.com/images/w_840,h_840,f_auto,q_auto:sensitive,fl_lossy/e3a7db18925d4728809baafc0106b761_9366/Ultraboost_20_Shoes_Black_EF1043_01_standard.jpg"));
+        displayShoes();
     }
-    public static Drawable LoadImageFromWebOperations(String url) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src name");
-            return d;
-        } catch (Exception e) {
-            return null;
+    public void displayShoes() {
+        LinearLayout list = findViewById(R.id.list);
+        for(Shoe shoe : shoes) {
+            View shoeChunk = getLayoutInflater().inflate(R.layout.chunk_shoe, list, false);
+            list.addView(shoeChunk);
         }
     }
 }
