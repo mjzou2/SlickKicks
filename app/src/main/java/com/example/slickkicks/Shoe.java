@@ -14,13 +14,13 @@ public class Shoe {
     private String gender;
     private String url;
     private int imageID;
-    public Shoe(String b, String n, int p, String g, String u) {
+    public Shoe(String b, String n, int p, String g, String u, int i) {
         brand = b;
         name = n;
         price = p;
         gender = g;
         url = u;
-        imageID = R.drawable.male_stan_smith;
+        imageID = i;
     }
     public String getBrand() {
         return brand;
@@ -37,5 +37,7 @@ public class Shoe {
     public String getUrl() {
         return url;
     }
-
+    public int getImageID() {
+        return imageID;
+    }
 }

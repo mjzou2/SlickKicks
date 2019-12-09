@@ -7,12 +7,12 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/shoeImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stan_smith_white" />
+        app:srcCompat="@drawable/male_stan_smith" />
 
     <TextView
         android:id="@+id/shoeBrand"
@@ -22,7 +22,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="1dp"
         android:text="brand"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/shoeImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
