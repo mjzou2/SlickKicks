@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 public class GenderActivity extends AppCompatActivity {
-    private boolean femaleClicked = false;
-    private boolean maleClicked = false;
+    private static boolean femaleClicked = false;
+    private static boolean maleClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class GenderActivity extends AppCompatActivity {
         Button female = findViewById(R.id.Female);
         Intent intent = new Intent(this, FOptionsActivity.class);
         female.setOnClickListener(unused -> {
-                    femaleClicked =true;
+                    femaleClicked = true;
                     startActivity(intent);
                 }
         );
@@ -29,15 +29,15 @@ public class GenderActivity extends AppCompatActivity {
         Button male = findViewById(R.id.Male);
         Intent intent2 = new Intent(this, OptionsActivity.class);
         male.setOnClickListener(unused -> {
-                    maleClicked =true;
+                    maleClicked = true;
                     startActivity(intent2);
                 }
         );
     }
-    public boolean getmaleClicked() {
+    public static boolean getMaleClicked() {
         return maleClicked;
     }
-    public boolean getfemaleClicked() {
+    public static boolean getFemaleClicked() {
         return femaleClicked;
     }
 }

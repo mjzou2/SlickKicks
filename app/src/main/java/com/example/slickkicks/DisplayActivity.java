@@ -9,19 +9,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.ArrayList;
+
 public class DisplayActivity extends AppCompatActivity {
 
     private Shoe[] shoes;
-    OptionsActivity mo = new OptionsActivity();
-    FOptionsActivity fo = new FOptionsActivity();
-    GenderActivity genderActivity = new GenderActivity();
-//    TextView textView = findViewById(R.id.textView);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
         initShoeDatabase();
-        //search();
+        removeFalses();
         displayShoes();
 //        initShoeDatabase();
 
@@ -29,18 +29,20 @@ public class DisplayActivity extends AppCompatActivity {
     }
     public void displayShoes() {
         LinearLayout list = findViewById(R.id.list);
-        for(Shoe shoe: shoes) {
-            View shoeChunk = getLayoutInflater().inflate(R.layout.chunk_shoe, list, false);
-            TextView brand = shoeChunk.findViewById(R.id.shoeBrand);
-            brand.setText(shoe.getBrand());
-            TextView name = shoeChunk.findViewById(R.id.shoeName);
-            name.setText(shoe.getName());
-            TextView price = shoeChunk.findViewById(R.id.shoePrice);
-            price.setText("$" + Integer.toString(shoe.getPrice()));
-            list.addView(shoeChunk);
-            ImageView image = shoeChunk.findViewById(R.id.shoeImage);
-            Drawable item = getResources().getDrawable(shoe.getImageID());
-            image.setImageDrawable(item);
+        for(Shoe shoe : shoes) {
+            if (shoe != null) {
+                View shoeChunk = getLayoutInflater().inflate(R.layout.chunk_shoe, list, false);
+                TextView brand = shoeChunk.findViewById(R.id.shoeBrand);
+                brand.setText(shoe.getBrand());
+                TextView name = shoeChunk.findViewById(R.id.shoeName);
+                name.setText(shoe.getName());
+                TextView price = shoeChunk.findViewById(R.id.shoePrice);
+                price.setText("$" + Integer.toString(shoe.getPrice()));
+                list.addView(shoeChunk);
+                ImageView image = shoeChunk.findViewById(R.id.shoeImage);
+                Drawable item = getResources().getDrawable(shoe.getImageID());
+                image.setImageDrawable(item);
+            }
         }
 
     }
@@ -128,45 +130,76 @@ public class DisplayActivity extends AppCompatActivity {
         };
     }
 
-    public void search() {
-        int num = 0;
-        if (genderActivity.getmaleClicked()) {
+    public void removeFalses() {
+        boolean male = false;
+        boolean female = false;
+        if (GenderActivity.getMaleClicked()) {
+            male = true;
             for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getGender() == "Female") {
+                if (shoes[i].getGender().equals("Female")) {
                     shoes[i] = null;
-                } else{
-                    if (mo.getU() == false && shoes[i].getBrand() == "Under Armour") {
-                        shoes[i] = null;
-                    }
-                    if (mo.getA() == false && shoes[i].getBrand() == "Adidas") {
-                        shoes[i] = null;
-                    }
-                    if (mo.getN() == false && shoes[i].getBrand() == "Nike") {
-                        shoes[i] = null;
-                    }
-                    if (mo.getPrice() < shoes[i].getPrice()) {
+                }
+            }
+        } else {
+            female = true;
+            for (int i = 0; i < shoes.length; i++) {
+                if (shoes[i].getGender().equals("Male")) {
+                    shoes[i] = null;
+                }
+            }
+        }
+        if (male) {
+            if (!(OptionsActivity.getA())) {
+                for (int i = 0; i < shoes.length; i++) {
+                    if (shoes[i].getBrand().equals("Adidas")) {
                         shoes[i] = null;
                     }
                 }
             }
-        }
-        if (genderActivity.getfemaleClicked()) {
+            if (!(OptionsActivity.getN())) {
+                for (int i = 0; i < shoes.length; i++) {
+                    if (shoes[i].getBrand().equals("Nike")) {
+                        shoes[i] = null;
+                    }
+                }
+            }
+            if (!(OptionsActivity.getU())) {
+                for (int i = 0; i < shoes.length; i++) {
+                    if (shoes[i].getBrand().equals("Under Armour")) {
+                        shoes[i] = null;
+                    }
+                }
+            }
             for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getGender() == "Male") {
+                if (shoes[i].getPrice() > OptionsActivity.getPrice()) {
                     shoes[i] = null;
-                } else{
-                    if (fo.getU() == false && shoes[i].getBrand() == "Under Armour") {
+                }
+            }
+        } else if (female) {
+            if (!(FOptionsActivity.getA())) {
+                for (int i = 0; i < shoes.length; i++) {
+                    if (shoes[i].getBrand().equals("Adidas")) {
                         shoes[i] = null;
                     }
-                    if (fo.getA() == false && shoes[i].getBrand() == "Adidas") {
+                }
+            }
+            if (!(FOptionsActivity.getN())) {
+                for (int i = 0; i < shoes.length; i++) {
+                    if (shoes[i].getBrand().equals("Nike")) {
                         shoes[i] = null;
                     }
-                    if (fo.getN() == false && shoes[i].getBrand() == "Nike") {
+                }
+            }
+            if (!(FOptionsActivity.getU())) {
+                for (int i = 0; i < shoes.length; i++) {
+                    if (shoes[i].getBrand().equals("Under Armour")) {
                         shoes[i] = null;
                     }
-                    if (fo.getPrice() < shoes[i].getPrice()) {
-                        shoes[i] = null;
-                    }
+                }
+            }
+            for (int i = 0; i < shoes.length; i++) {
+                if (shoes[i].getPrice() > FOptionsActivity.getPrice()) {
+                    shoes[i] = null;
                 }
             }
         }

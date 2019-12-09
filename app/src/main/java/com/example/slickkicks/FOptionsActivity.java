@@ -14,11 +14,11 @@ public class FOptionsActivity extends AppCompatActivity {
     SeekBar seekBar;
     SeekBar seekBar2;
     CheckBox nike, adidas, ua;
-    private boolean n = false;
-    private boolean a = false;
-    private boolean u = false;
-    int size;
-    int price;
+    private static boolean n = false;
+    private static boolean a = false;
+    private static boolean u = false;
+    private static int size;
+    private static int price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,20 +82,20 @@ public class FOptionsActivity extends AppCompatActivity {
             u = true;
         }
     }
-    public boolean getN() {
+    public static boolean getN() {
         return n;
     }
-    public boolean getA() {
+    public static boolean getA() {
         return a;
     }
-    public boolean getU() {
+    public static boolean getU() {
         return u;
     }
-    public int getSize() {
+    public static int getSize() {
         return size;
     }
-    public int getGender() {return 1;}
-    public int getPrice() {
+    public static int getGender() {return 1;}
+    public static int getPrice() {
         return price;
     }
 }
