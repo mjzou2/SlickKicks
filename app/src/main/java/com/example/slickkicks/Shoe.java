@@ -14,7 +14,7 @@ public class Shoe {
     private String gender;
     private String url;
     private int imageID;
-    private int sleekness
+    private int sleekness;
     public Shoe(String b, String n, int p, String g, String u, int i, int s) {
         brand = b;
         name = n;
