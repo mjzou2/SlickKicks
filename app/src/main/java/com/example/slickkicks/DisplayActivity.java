@@ -214,7 +214,8 @@ public class DisplayActivity extends AppCompatActivity {
                     shoes[i] = null;
                 } else if (shoes[i].getPrice() > OptionsActivity.getPrice()) {
                     shoes[i] = null;
-                } else if (shoes[i].getSleekness())
+                } else if (shoes[i].getSleekness() < OptionsActivity.getSleekness()) {
+                    shoes[i] = null;
                 } else if(!(OptionsActivity.getA()) && shoes[i].getBrand().equals("Adidas")) {
                     shoes[i] = null;
                 } else if (!(OptionsActivity.getN()) && shoes[i].getBrand().equals("Nike")) {
@@ -230,6 +231,8 @@ public class DisplayActivity extends AppCompatActivity {
                 if (shoes[i].getGender().equals("Male")) {
                     shoes[i] = null;
                 } else if (shoes[i].getPrice() > FOptionsActivity.getPrice()) {
+                    shoes[i] = null;
+                } else if (shoes[i].getSleekness() < FOptionsActivity.getSleekness()) {
                     shoes[i] = null;
                 } else if(!(FOptionsActivity.getA()) && shoes[i].getBrand().equals("Adidas")) {
                     shoes[i] = null;
