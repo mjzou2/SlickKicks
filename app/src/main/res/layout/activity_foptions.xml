@@ -52,6 +52,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
         android:layout_marginTop="50dp"
+        android:max="400"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -116,7 +117,7 @@
 
     <TextView
         android:id="@+id/optionsTitle"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="128dp"

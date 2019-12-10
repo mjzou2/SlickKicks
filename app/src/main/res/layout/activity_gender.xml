@@ -36,7 +36,7 @@
 
     <TextView
         android:id="@+id/Gender"
-        android:layout_width="248dp"
+        android:layout_width="500dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
