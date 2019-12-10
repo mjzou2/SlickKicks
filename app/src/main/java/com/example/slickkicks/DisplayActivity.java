@@ -146,7 +146,23 @@ public class DisplayActivity extends AppCompatActivity {
                 new Shoe("Under Armour", "HOVR Infinite Camo", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-infinite-camo/pid3022503-100", R.drawable.female_hovr_infinite_camo),
 
                 new Shoe("New Balance", "574 Core", 80, "Male", "https://www.newbalance.com/pd/574-core/ML574-EG.html?dwvar_ML574-EG_color=Grey", R.drawable.male_574_core),
-                
+                new Shoe("New Balance", "520", 60, "Male", "https://www.newbalance.com/pd/520/U520-UM.html?dwvar_U520-UM_color=Pigment_with_Nimbus%20Cloud", R.drawable.male_520),
+                new Shoe("New Balance", "All Coasts 210", 60 "Male", "https://www.newbalance.com/pd/all-coasts-210/AM210V1-30242-M.html?dwvar_AM210V1-30242-M_color=Brown_with_White", R.drawable.male_all_coasts_210),
+                new Shoe("New Balacne", "Pro Court 212" , 65, "Male", "https://www.newbalance.com/pd/pro-court-212/NM212V1-26425-M.html?dwvar_NM212V1-26425-M_color=Black_with_Yellow", R.drawable.male_pro_court_212),
+                new Shoe ("New Balance", "RALAXA", 65, "Male","https://www.newbalance.com/pd/ralaxa/MARLX.html?dwvar_MARLX_color=Black_with_Orca_and_White", R.drawable.male_ralaxa),
+                new Shoe ("New Balance", "All Coasts 331", 65, "Male", "https://www.newbalance.com/pd/all-coasts-331/AM331.html?dwvar_AM331_color=Cobalt%20Blue_with_White", R.drawable.male_all_coasts_331),
+                new Shoe("New Balance", "Made in UK 991", 249, "Male","https://www.newbalance.com/pd/made-in-uk-991/ML991V1-27393-M.html?dwvar_ML991V1-27393-M_color=Burnt%20Orange_with_Silver_and_White", R.drawable.male_made_in_UK_991),
+                new Shoe("New Balance", "NB1 997 Perforated Suede", 230, "Male", "https://www.newbalance.com/pd/nb1-997-perforated-suede/US997MP1-BLANK.html", R.drawable.male_nb1_997_perforated_suede),
+                new Shoe("New Balance", "Made in UK 1500 LFC", 220, "Male", "https://www.newbalance.com/pd/made-in-uk-1500-lfc/ML1500V1-33719-M.html?dwvar_ML1500V1-33719-M_color=Black_with_Gold", R.drawable.male_made_in_UK_1500_LFC),
+                new Shoe("New Blanace", "574 Sport", 70, "Male", "https://www.newbalance.com/pd/574-sport/MS574-V2SM.html?dwvar_MS574-V2SM_color=Pigment_with_White", R.drawable.male_574_sport),
+
+                new Shoe("New Balance", "Womens 990v5 Made in US", 175, "Female", "https://www.newbalance.com/pd/womens-990v5-made-in-us/W990V5-21642-W.html?dwvar_W990V5-21642-W_color=Grey_with_Castlerock", R.drawable.female_womens_990_v5_mad_in_US),
+                new Shoe("New Balance", "574", 90, "Female", "https://www.newbalance.com/pd/574/WL574V2-27306-W.html?dwvar_WL574V2-27306-W_color=Black_with_Metallic%20Gold", R.drawable.female_574),
+                new Shoe("New Balance", "880v9", 125, "Female", "https://www.newbalance.com/pd/860v10/W860V10-26325-W.html?dwvar_W860V10-26325-W_color=Black_with_Gunmetal_and_Lead", R.drawable.female_880v9),
+                new Shoe("New Balance", "608v5", 70, "Female", "https://www.newbalance.com/pd/608v5/WX608-V5.html?dwvar_WX608-V5_color=White_with_Light%20Blue", R.drawable.femal_608v5),
+                new Shoe("New Balance", "Women's New Balance 577", 80, "Female", "https://www.newbalance.com/pd/womens-new-balance-577/WW577.html?dwvar_WW577_color=White", R.drawable.female_womens_new_balance_557),
+                new Shoe ("New Balance", "FuelCore Nergize Mule", 65, "Female", "https://www.newbalance.com/pd/fuelcore-nergize-mule/WLNRMV1-25083-W.html?dwvar_WLNRMV1-25083-W_color=Castlerock_with_Oyster%20Pink_and_Magnet", R.drawable.female_fuelcore_nergize_mule),
+                new Shoe("New Balance", "WRT300v2", 85, "Female","https://www.newbalance.com/pd/wrt300v2/WRT300V2-27502-W.html?dwvar_WRT300V2-27502-W_color=Sea%20Salt_with_Moonbeam", R.drawable.female_wrt300v2)
         };
     }
     public static String getTheUrl() {
