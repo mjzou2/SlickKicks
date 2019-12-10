@@ -7,23 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class FOptionsActivity extends AppCompatActivity {
     SeekBar seekBar;
     SeekBar seekBar2;
-    CheckBox nike, adidas, ua;
     private static boolean n = false;
     private static boolean a = false;
     private static boolean u = false;
-    int size;
+    private static int size;
     private static int price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foptions);
-        selectItem();
+        LinearLayout brands = findViewById(R.id.linearLayout);
+        CheckBox nike = brands.findViewById(R.id.Nike);
+        CheckBox adidas = brands.findViewById(R.id.Adidas);
+        CheckBox ua = brands.findViewById(R.id.UnderArmour);
 
         seekBar=(SeekBar)findViewById(R.id.femalesize);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -65,23 +68,18 @@ public class FOptionsActivity extends AppCompatActivity {
         });
         Button next = (Button)findViewById(R.id.Next);
         Intent intent = new Intent(this, DisplayActivity.class);
-        next.setOnClickListener(unused -> startActivity(intent));
-    }
-    public void selectItem() {
-        nike = (CheckBox)findViewById(R.id.Nike);
-        adidas = (CheckBox)findViewById(R.id.Adidas);
-        ua = (CheckBox)findViewById(R.id.UnderArmour);
-
-        if (nike.isChecked()) {
-            n = true;
-
-        }
-        if (adidas.isChecked()) {
-            a = true;
-        }
-        if (ua.isChecked()) {
-            u = true;
-        }
+        next.setOnClickListener(unused -> {
+            if (nike.isChecked()) {
+                n = true;
+            }
+            if (adidas.isChecked()) {
+                a = true;
+            }
+            if (ua.isChecked()) {
+                u = true;
+            }
+            startActivity(intent);
+        });
     }
     public static boolean getN() {
         return n;
@@ -92,9 +90,10 @@ public class FOptionsActivity extends AppCompatActivity {
     public static boolean getU() {
         return u;
     }
-    public int getSize() {
+    public static int getSize() {
         return size;
     }
+    public static int getGender() {return 1;}
     public static int getPrice() {
         return price;
     }
