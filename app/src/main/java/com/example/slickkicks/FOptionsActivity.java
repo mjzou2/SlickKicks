@@ -35,17 +35,17 @@ public class FOptionsActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
                 sleekness = progress;
-                Toast.makeText(getApplicationContext(),"Sleekness: "+progress, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Minimum Sleekness: "+progress, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getApplicationContext(),"Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Minimum Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getApplicationContext(),"Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Minimum Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
             }
         });
         seekBar2=(SeekBar)findViewById(R.id.pricebar);
