@@ -85,26 +85,7 @@ public class OptionsActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    /*
-    public void selectItem() {
-        LinearLayout brands = findViewById(R.id.linearLayout);
-        nike = brands.findViewById(R.id.Nike);
-        adidas = brands.findViewById(R.id.Adidas);
-        ua = brands.findViewById(R.id.UnderArmour);
 
-        if (nike.isChecked()) {
-            n = true;
-
-        }
-        if (adidas.isChecked()) {
-            a = true;
-        }
-        if (ua.isChecked()) {
-            u = true;
-        }
-    }
-
-     */
     public static boolean getN() {
         return n;
     }

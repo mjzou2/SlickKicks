@@ -17,8 +17,8 @@ public class FOptionsActivity extends AppCompatActivity {
     private static boolean a = false;
     private static boolean u = false;
     private static boolean b = false;
-    private static int sleekness;
-    private static int price;
+    private static int sleekness = 0;
+    private static int price = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
