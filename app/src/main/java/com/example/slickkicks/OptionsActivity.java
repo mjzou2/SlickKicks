@@ -15,14 +15,15 @@ public class OptionsActivity extends AppCompatActivity {
     SeekBar seekBar2;
     CheckBox nike, adidas, ua;
     private int size = 0;
-    private int price = 0;
-    private boolean n = false;
-    private boolean a = false;
-    private boolean u = false;
+    private static int price = 0;
+    private static boolean n = false;
+    private static boolean a = false;
+    private static boolean u = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        selectItem();
 
         seekBar=(SeekBar)findViewById(R.id.size);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -66,38 +67,58 @@ public class OptionsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayActivity.class);
         next.setOnClickListener(unused -> startActivity(intent));
     }
-    public void selectItem(View view) {
+    public void selectItem() {
         nike = (CheckBox)findViewById(R.id.Nike);
         adidas = (CheckBox)findViewById(R.id.Adidas);
         ua = (CheckBox)findViewById(R.id.UnderArmour);
 
-        if (nike.isChecked()) {
-            n = true;
-
-        }
-        if (adidas.isChecked()) {
-            a = true;
-        }
-        if (ua.isChecked()) {
-            u = true;
-        }
+        nike.setOnClickListener(unused -> {
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (((CheckBox)v).isChecked()) {
+                                n = true;
+                            }
+                        }
+                    };
+                }
+        );
+        adidas.setOnClickListener(unused -> {
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (((CheckBox)v).isChecked()) {
+                                a = true;
+                            }
+                        }
+                    };
+                }
+        );
+        ua.setOnClickListener(unused -> {
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (((CheckBox)v).isChecked()) {
+                                u = true;
+                            }
+                        }
+                    };
+                }
+        );
     }
-    public boolean getN() {
+    public static boolean getN() {
         return n;
     }
-    public boolean getA() {
+    public static boolean getA() {
         return a;
     }
-    public boolean getU() {
+    public static  boolean getU() {
         return u;
     }
-    public int getSize() {
+    public  int getSize() {
         return size;
     }
-    public int getPrice() {
+    public static  int getPrice() {
         return price;
-    }
-    public int getGender() {
-        return 0;
     }
 }

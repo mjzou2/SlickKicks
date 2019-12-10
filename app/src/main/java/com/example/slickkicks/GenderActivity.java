@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 public class GenderActivity extends AppCompatActivity {
-    private boolean femaleClicked = false;
-    private boolean maleClicked = false;
+    private static  boolean femaleClicked = false;
+    private static boolean maleClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +34,10 @@ public class GenderActivity extends AppCompatActivity {
                 }
         );
     }
-    public boolean getmaleClicked() {
+    public static boolean getmaleClicked() {
         return maleClicked;
     }
-    public boolean getfemaleClicked() {
+    public static boolean getfemaleClicked() {
         return femaleClicked;
     }
 }
