@@ -117,7 +117,7 @@ public class DisplayActivity extends AppCompatActivity {
                 new Shoe("Adidas", "Alphaboost", 120, "Male", "https://www.adidas.com/us/alphaboost-shoes/G54128.html", R.drawable.male_alphaboost,6),
                 new Shoe("Adidas", "Grand Court", 65, "Male", "https://www.adidas.com/us/grand-court-shoes/EE7891.html", R.drawable.male_grand_court,7),
                 new Shoe("Adidas", "TERREX AGRAVIC BOA SHOES", 160, "Male", "https://www.adidas.com/us/terrex-agravic-boa-shoes/G26377.html", R.drawable.male_terrex_agravic_boa_shoe, 10),
-                new Shoe("Adidas", "FYW S-97 SHOES", 84, "Male", "https://www.adidas.com/us/fyw-s-97-shoes/EE5312.html", R.drawable.male_fyw_s_97_shoes, 9),
+                new Shoe("Adidas", "FYW S-97 SHOES", 84, "Male", "https://www.adidas.com/us/fyw-s-97-shoes/EE5312.html", R.drawable.male_fy_s_97_shoes, 9),
 
                 new Shoe("Adidas", "Stan Smith", 80, "Female", "https://www.adidas.com/us/stan-smith-shoes/B24105.html", R.drawable.female_stan_smith,8),
                 new Shoe("Adidas", "NMD_R1", 130, "Female", "https://www.adidas.com/us/nmd_r1-shoes/EE5173.html", R.drawable.female_nmd_r1,6),
