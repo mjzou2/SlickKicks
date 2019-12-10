@@ -59,6 +59,21 @@ public class DisplayActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                 );
+                name.setOnClickListener(unused -> {
+                            url = shoe.getUrl();
+                            startActivity(intent);
+                        }
+                );
+                price.setOnClickListener(unused -> {
+                            url = shoe.getUrl();
+                            startActivity(intent);
+                        }
+                );
+                brand.setOnClickListener(unused -> {
+                            url = shoe.getUrl();
+                            startActivity(intent);
+                        }
+                );
             }
         }
 
@@ -147,7 +162,7 @@ public class DisplayActivity extends AppCompatActivity {
 
                 new Shoe("New Balance", "574 Core", 80, "Male", "https://www.newbalance.com/pd/574-core/ML574-EG.html?dwvar_ML574-EG_color=Grey", R.drawable.male_574_core),
                 new Shoe("New Balance", "520", 60, "Male", "https://www.newbalance.com/pd/520/U520-UM.html?dwvar_U520-UM_color=Pigment_with_Nimbus%20Cloud", R.drawable.male_520),
-                new Shoe("New Balance", "All Coasts 210", 60 "Male", "https://www.newbalance.com/pd/all-coasts-210/AM210V1-30242-M.html?dwvar_AM210V1-30242-M_color=Brown_with_White", R.drawable.male_all_coasts_210),
+                new Shoe("New Balance", "All Coasts 210", 60, "Male", "https://www.newbalance.com/pd/all-coasts-210/AM210V1-30242-M.html?dwvar_AM210V1-30242-M_color=Brown_with_White", R.drawable.male_all_coasts_210),
                 new Shoe("New Balacne", "Pro Court 212" , 65, "Male", "https://www.newbalance.com/pd/pro-court-212/NM212V1-26425-M.html?dwvar_NM212V1-26425-M_color=Black_with_Yellow", R.drawable.male_pro_court_212),
                 new Shoe ("New Balance", "RALAXA", 65, "Male","https://www.newbalance.com/pd/ralaxa/MARLX.html?dwvar_MARLX_color=Black_with_Orca_and_White", R.drawable.male_ralaxa),
                 new Shoe ("New Balance", "All Coasts 331", 65, "Male", "https://www.newbalance.com/pd/all-coasts-331/AM331.html?dwvar_AM331_color=Cobalt%20Blue_with_White", R.drawable.male_all_coasts_331),
