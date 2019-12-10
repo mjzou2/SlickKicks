@@ -27,6 +27,17 @@ public class DisplayActivity extends AppCompatActivity {
 
 
     }
+    public void onBackPressed() {
+        LinearLayout list = findViewById(R.id.list);
+        list.removeAllViews();
+        initShoeDatabase();
+        if (GenderActivity.getMaleClicked()) {
+            OptionsActivity.setU(false);
+            OptionsActivity.setA(false);
+            OptionsActivity.setN(false);
+        }
+        super.onBackPressed();
+    }
     public void displayShoes() {
         LinearLayout list = findViewById(R.id.list);
         for(Shoe shoe : shoes) {

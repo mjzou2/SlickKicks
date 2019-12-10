@@ -119,4 +119,16 @@ public class OptionsActivity extends AppCompatActivity {
     public static int getGender() {
         return 0;
     }
+    public static void setN(boolean newN) {
+        n = newN;
+    }
+    public static void setA(boolean newA) {
+        a = newA;
+    }
+    public static void setU(boolean newU) {
+        u = newU;
+    }
+    public static void setPrice(int newPrice) {
+        price = newPrice;
+    }
 }

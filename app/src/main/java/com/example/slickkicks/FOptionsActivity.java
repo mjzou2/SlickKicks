@@ -14,7 +14,6 @@ import android.widget.Toast;
 public class FOptionsActivity extends AppCompatActivity {
     SeekBar seekBar;
     SeekBar seekBar2;
-    CheckBox nike, adidas, ua;
     private static boolean n = false;
     private static boolean a = false;
     private static boolean u = false;
@@ -24,7 +23,11 @@ public class FOptionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foptions);
-        selectItem();
+        LinearLayout brands = findViewById(R.id.linearLayout);
+        CheckBox nike = brands.findViewById(R.id.Nike);
+        CheckBox adidas = brands.findViewById(R.id.Adidas);
+        CheckBox ua = brands.findViewById(R.id.UnderArmour);
+
         seekBar=(SeekBar)findViewById(R.id.femalesize);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -65,24 +68,18 @@ public class FOptionsActivity extends AppCompatActivity {
         });
         Button next = (Button)findViewById(R.id.Next);
         Intent intent = new Intent(this, DisplayActivity.class);
-        next.setOnClickListener(unused -> startActivity(intent));
-    }
-    public void selectItem() {
-        LinearLayout brands = findViewById(R.id.linearLayout);
-        nike = brands.findViewById(R.id.Nike);
-        adidas = brands.findViewById(R.id.Adidas);
-        ua = brands.findViewById(R.id.UnderArmour);
-
-        if (nike.isChecked()) {
-            n = true;
-
-        }
-        if (adidas.isChecked()) {
-            a = true;
-        }
-        if (ua.isChecked()) {
-            u = true;
-        }
+        next.setOnClickListener(unused -> {
+            if (nike.isChecked()) {
+                n = true;
+            }
+            if (adidas.isChecked()) {
+                a = true;
+            }
+            if (ua.isChecked()) {
+                u = true;
+            }
+            startActivity(intent);
+        });
     }
     public static boolean getN() {
         return n;
