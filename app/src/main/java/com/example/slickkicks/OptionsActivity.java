@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class OptionsActivity extends AppCompatActivity {
     SeekBar seekBar;
     SeekBar seekBar2;
-    CheckBox nike, adidas, ua;
     private static int size = 0;
     private static int price = 0;
     private static boolean n = false;
@@ -23,6 +23,10 @@ public class OptionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        LinearLayout brands = findViewById(R.id.linearLayout);
+        CheckBox nike = brands.findViewById(R.id.Nike);
+        CheckBox adidas = brands.findViewById(R.id.Adidas);
+        CheckBox ua = brands.findViewById(R.id.UnderArmour);
 
         seekBar=(SeekBar)findViewById(R.id.size);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -64,12 +68,25 @@ public class OptionsActivity extends AppCompatActivity {
         });
         Button next = (Button)findViewById(R.id.Next);
         Intent intent = new Intent(this, DisplayActivity.class);
-        next.setOnClickListener(unused -> startActivity(intent));
+        next.setOnClickListener(unused -> {
+            if (nike.isChecked()) {
+                n = true;
+            }
+            if (adidas.isChecked()) {
+                a = true;
+            }
+            if (ua.isChecked()) {
+                u = true;
+            }
+            startActivity(intent);
+        });
     }
-    public void selectItem(View view) {
-        nike = (CheckBox)findViewById(R.id.Nike);
-        adidas = (CheckBox)findViewById(R.id.Adidas);
-        ua = (CheckBox)findViewById(R.id.UnderArmour);
+    /*
+    public void selectItem() {
+        LinearLayout brands = findViewById(R.id.linearLayout);
+        nike = brands.findViewById(R.id.Nike);
+        adidas = brands.findViewById(R.id.Adidas);
+        ua = brands.findViewById(R.id.UnderArmour);
 
         if (nike.isChecked()) {
             n = true;
@@ -82,6 +99,8 @@ public class OptionsActivity extends AppCompatActivity {
             u = true;
         }
     }
+
+     */
     public static boolean getN() {
         return n;
     }

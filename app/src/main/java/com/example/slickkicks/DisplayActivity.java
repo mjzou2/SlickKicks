@@ -131,74 +131,31 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
     public void removeFalses() {
-        boolean male = false;
-        boolean female = false;
         if (GenderActivity.getMaleClicked()) {
-            male = true;
             for (int i = 0; i < shoes.length; i++) {
                 if (shoes[i].getGender().equals("Female")) {
+                    shoes[i] = null;
+                } else if (shoes[i].getPrice() > OptionsActivity.getPrice()) {
+                    shoes[i] = null;
+                } else if(!(OptionsActivity.getA()) && shoes[i].getBrand().equals("Adidas")) {
+                    shoes[i] = null;
+                } else if (!(OptionsActivity.getN()) && shoes[i].getBrand().equals("Nike")) {
+                    shoes[i] = null;
+                } else if (!(OptionsActivity.getU()) && shoes[i].getBrand().equals("Under Armour")) {
                     shoes[i] = null;
                 }
             }
         } else {
-            female = true;
             for (int i = 0; i < shoes.length; i++) {
                 if (shoes[i].getGender().equals("Male")) {
                     shoes[i] = null;
-                }
-            }
-        }
-        if (male) {
-            if (!(OptionsActivity.getA())) {
-                for (int i = 0; i < shoes.length; i++) {
-                    if (shoes[i].getBrand().equals("Adidas")) {
-                        shoes[i] = null;
-                    }
-                }
-            }
-            if (!(OptionsActivity.getN())) {
-                for (int i = 0; i < shoes.length; i++) {
-                    if (shoes[i].getBrand().equals("Nike")) {
-                        shoes[i] = null;
-                    }
-                }
-            }
-            if (!(OptionsActivity.getU())) {
-                for (int i = 0; i < shoes.length; i++) {
-                    if (shoes[i].getBrand().equals("Under Armour")) {
-                        shoes[i] = null;
-                    }
-                }
-            }
-            for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getPrice() > OptionsActivity.getPrice()) {
+                } else if (shoes[i].getPrice() > FOptionsActivity.getPrice()) {
                     shoes[i] = null;
-                }
-            }
-        } else if (female) {
-            if (!(FOptionsActivity.getA())) {
-                for (int i = 0; i < shoes.length; i++) {
-                    if (shoes[i].getBrand().equals("Adidas")) {
-                        shoes[i] = null;
-                    }
-                }
-            }
-            if (!(FOptionsActivity.getN())) {
-                for (int i = 0; i < shoes.length; i++) {
-                    if (shoes[i].getBrand().equals("Nike")) {
-                        shoes[i] = null;
-                    }
-                }
-            }
-            if (!(FOptionsActivity.getU())) {
-                for (int i = 0; i < shoes.length; i++) {
-                    if (shoes[i].getBrand().equals("Under Armour")) {
-                        shoes[i] = null;
-                    }
-                }
-            }
-            for (int i = 0; i < shoes.length; i++) {
-                if (shoes[i].getPrice() > FOptionsActivity.getPrice()) {
+                } else if(!(FOptionsActivity.getA()) && shoes[i].getBrand().equals("Adidas")) {
+                    shoes[i] = null;
+                } else if (!(FOptionsActivity.getN()) && shoes[i].getBrand().equals("Nike")) {
+                    shoes[i] = null;
+                } else if (!(FOptionsActivity.getU()) && shoes[i].getBrand().equals("Under Armour")) {
                     shoes[i] = null;
                 }
             }

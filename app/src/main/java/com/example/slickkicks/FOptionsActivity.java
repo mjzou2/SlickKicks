@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class FOptionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foptions);
-
+        selectItem();
         seekBar=(SeekBar)findViewById(R.id.femalesize);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -66,10 +67,11 @@ public class FOptionsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayActivity.class);
         next.setOnClickListener(unused -> startActivity(intent));
     }
-    public void selectItem(View view) {
-        nike = (CheckBox)findViewById(R.id.Nike);
-        adidas = (CheckBox)findViewById(R.id.Adidas);
-        ua = (CheckBox)findViewById(R.id.UnderArmour);
+    public void selectItem() {
+        LinearLayout brands = findViewById(R.id.linearLayout);
+        nike = brands.findViewById(R.id.Nike);
+        adidas = brands.findViewById(R.id.Adidas);
+        ua = brands.findViewById(R.id.UnderArmour);
 
         if (nike.isChecked()) {
             n = true;
