@@ -14,13 +14,15 @@ public class Shoe {
     private String gender;
     private String url;
     private int imageID;
-    public Shoe(String b, String n, int p, String g, String u, int i) {
+    private int sleekness
+    public Shoe(String b, String n, int p, String g, String u, int i, int s) {
         brand = b;
         name = n;
         price = p;
         gender = g;
         url = u;
         imageID = i;
+        sleekness = s;
     }
     public String getBrand() {
         return brand;
@@ -40,4 +42,5 @@ public class Shoe {
     public int getImageID() {
         return imageID;
     }
+    public int getSleekness(){return sleekness;}
 }
