@@ -35,6 +35,13 @@ public class DisplayActivity extends AppCompatActivity {
             OptionsActivity.setU(false);
             OptionsActivity.setA(false);
             OptionsActivity.setN(false);
+            OptionsActivity.setB(false);
+        }
+        if (GenderActivity.getFemaleClicked()) {
+            FOptionsActivity.setU(false);
+            FOptionsActivity.setA(false);
+            FOptionsActivity.setN(false);
+            FOptionsActivity.setB(false);
         }
         super.onBackPressed();
     }
