@@ -214,6 +214,7 @@ public class DisplayActivity extends AppCompatActivity {
                     shoes[i] = null;
                 } else if (shoes[i].getPrice() > OptionsActivity.getPrice()) {
                     shoes[i] = null;
+                } else if (shoes[i].getSleekness())
                 } else if(!(OptionsActivity.getA()) && shoes[i].getBrand().equals("Adidas")) {
                     shoes[i] = null;
                 } else if (!(OptionsActivity.getN()) && shoes[i].getBrand().equals("Nike")) {

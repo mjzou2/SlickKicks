@@ -17,7 +17,7 @@ public class FOptionsActivity extends AppCompatActivity {
     private static boolean a = false;
     private static boolean u = false;
     private static boolean b = false;
-    private static int size;
+    private static int sleekness;
     private static int price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +34,18 @@ public class FOptionsActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
-                size = progress;
-                Toast.makeText(getApplicationContext(),"Shoe Size: "+progress, Toast.LENGTH_SHORT).show();
+                sleekness = progress;
+                Toast.makeText(getApplicationContext(),"Sleekness: "+progress, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getApplicationContext(),"Shoe Size: "+size, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getApplicationContext(),"Shoe Size: "+size, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
             }
         });
         seekBar2=(SeekBar)findViewById(R.id.pricebar);
@@ -97,8 +97,8 @@ public class FOptionsActivity extends AppCompatActivity {
     public static boolean getB() {
         return b;
     }
-    public static int getSize() {
-        return size;
+    public static int getSleekness() {
+        return sleekness;
     }
     public static int getGender() {return 1;}
     public static int getPrice() {

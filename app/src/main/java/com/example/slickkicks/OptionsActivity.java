@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class OptionsActivity extends AppCompatActivity {
     SeekBar seekBar;
     SeekBar seekBar2;
-    private static int size = 0;
+    private static int sleekness = 0;
     private static int price = 0;
     private static boolean n = false;
     private static boolean a = false;
@@ -34,18 +34,18 @@ public class OptionsActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
-                size = progress;
-                Toast.makeText(getApplicationContext(),"Shoe Size: "+progress, Toast.LENGTH_SHORT).show();
+                sleekness = progress;
+                Toast.makeText(getApplicationContext(),"Sleekness: "+progress, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getApplicationContext(),"Shoe Size: "+size, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getApplicationContext(),"Shoe Size: "+size, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Sleekness: "+sleekness, Toast.LENGTH_SHORT).show();
             }
         });
         seekBar2=(SeekBar)findViewById(R.id.pricebar);
@@ -117,8 +117,8 @@ public class OptionsActivity extends AppCompatActivity {
     public static boolean getB() {
         return b;
     }
-    public static int getSize() {
-        return size;
+    public static int getSleekness() {
+        return sleekness;
     }
     public static int getPrice() {
         return price;
