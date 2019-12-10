@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -19,6 +18,7 @@ public class OptionsActivity extends AppCompatActivity {
     private static boolean n = false;
     private static boolean a = false;
     private static boolean u = false;
+    private static boolean b = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +27,9 @@ public class OptionsActivity extends AppCompatActivity {
         CheckBox nike = brands.findViewById(R.id.Nike);
         CheckBox adidas = brands.findViewById(R.id.Adidas);
         CheckBox ua = brands.findViewById(R.id.UnderArmour);
+        CheckBox nb = brands.findViewById(R.id.NewBalance);
 
-        seekBar=(SeekBar)findViewById(R.id.size);
+        seekBar=(SeekBar)findViewById(R.id.sleekbar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
@@ -47,7 +48,7 @@ public class OptionsActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Shoe Size: "+size, Toast.LENGTH_SHORT).show();
             }
         });
-        seekBar2=(SeekBar)findViewById(R.id.price);
+        seekBar2=(SeekBar)findViewById(R.id.pricebar);
         seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
@@ -66,7 +67,7 @@ public class OptionsActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Maximum price: $"+ price, Toast.LENGTH_SHORT).show();
             }
         });
-        Button next = (Button)findViewById(R.id.Next);
+        Button next = (Button)findViewById(R.id.next);
         Intent intent = new Intent(this, DisplayActivity.class);
         next.setOnClickListener(unused -> {
             if (nike.isChecked()) {
@@ -77,6 +78,9 @@ public class OptionsActivity extends AppCompatActivity {
             }
             if (ua.isChecked()) {
                 u = true;
+            }
+            if (nb.isChecked()) {
+                b = true;
             }
             startActivity(intent);
         });

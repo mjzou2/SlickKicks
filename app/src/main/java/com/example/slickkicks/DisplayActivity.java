@@ -146,7 +146,7 @@ public class DisplayActivity extends AppCompatActivity {
                 new Shoe("Under Armour", "HOVR Infinite Camo", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-infinite-camo/pid3022503-100", R.drawable.female_hovr_infinite_camo),
 
                 new Shoe("New Balance", "574 Core", 80, "Male", "https://www.newbalance.com/pd/574-core/ML574-EG.html?dwvar_ML574-EG_color=Grey", R.drawable.male_574_core),
-                
+
         };
     }
     public static String getTheUrl() {

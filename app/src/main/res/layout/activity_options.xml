@@ -7,51 +7,59 @@
     tools:context=".OptionsActivity">
 
     <Button
-        android:id="@+id/Next"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginBottom="150dp"
         android:text="Next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/size" />
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        android:background="@drawable/my_button_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price"
+        android:layout_marginTop="50dp"
+        android:text=" PRICE"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
     <TextView
-        android:id="@+id/shoeSize"
+        android:id="@+id/sleekness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shoe Size"
+        android:layout_marginTop="50dp"
+        android:text=" SLEEKNESS"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price" />
+        app:layout_constraintTop_toBottomOf="@+id/pricebar" />
 
     <SeekBar
-        android:id="@+id/price"
-        android:layout_width="155dp"
-        android:layout_height="73dp"
-        android:max="200"
+        android:id="@+id/pricebar"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <SeekBar
-        android:id="@+id/size"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="155dp"
-        android:layout_height="80dp"
-        android:max="15"
-        android:progress="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="410dp"
-        android:layout_height="121dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="200dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +71,11 @@
             android:id="@+id/brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Brand" />
+            android:background="#00000000"
+            android:text="BRANDS"
+            android:textColor="#000000"
+            android:textStyle="bold|italic"
+            android:typeface="sans" />
 
         <CheckBox
             android:id="@+id/Nike"
@@ -83,6 +95,38 @@
             android:layout_height="wrap_content"
             android:text="Under Armour" />
 
+        <CheckBox
+            android:id="@+id/NewBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Balance" />
+
     </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sleekbar"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="50dp"
+        android:max="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pricebar" />
+
+    <TextView
+        android:id="@+id/optionsTitle"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="4dp"
+        android:text="OPTIONS"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold|italic"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
