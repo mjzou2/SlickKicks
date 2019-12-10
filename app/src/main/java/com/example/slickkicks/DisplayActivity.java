@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.Arrays;
@@ -25,6 +26,12 @@ public class DisplayActivity extends AppCompatActivity {
         initShoeDatabase();
         removeFalses();
         displayShoes();
+        if(noShoesSelected()) {
+            ScrollView scroll = findViewById(R.id.ScrollView);
+            LinearLayout list = scroll.findViewById(R.id.list);
+            TextView noShoes = list.findViewById(R.id.noResults);
+            noShoes.setVisibility(View.VISIBLE);
+        }
 //        initShoeDatabase();
     }
     public void onBackPressed() {
@@ -44,6 +51,15 @@ public class DisplayActivity extends AppCompatActivity {
             FOptionsActivity.setB(false);
         }
         super.onBackPressed();
+    }
+    public boolean noShoesSelected() {
+        boolean toReturn = true;
+        for (Shoe shoe : shoes) {
+            if (shoe != null) {
+                toReturn = false;
+            }
+        }
+        return toReturn;
     }
     public void displayShoes() {
         LinearLayout list = findViewById(R.id.list);

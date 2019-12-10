@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
-            android:text="BRANDS"
+            android:text=" BRANDS"
             android:textColor="#000000"
             android:textStyle="bold|italic"
             android:typeface="sans" />
