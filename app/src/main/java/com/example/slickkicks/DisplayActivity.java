@@ -2,6 +2,7 @@ package com.example.slickkicks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 public class DisplayActivity extends AppCompatActivity {
 
     private Shoe[] shoes;
+    private static String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,12 @@ public class DisplayActivity extends AppCompatActivity {
                 ImageView image = shoeChunk.findViewById(R.id.shoeImage);
                 Drawable item = getResources().getDrawable(shoe.getImageID());
                 image.setImageDrawable(item);
+                Intent intent = new Intent(this, ViewActivity.class);
+                image.setOnClickListener(unused -> {
+                            url = shoe.getUrl();
+                            startActivity(intent);
+                        }
+                );
             }
         }
 
@@ -139,6 +147,9 @@ public class DisplayActivity extends AppCompatActivity {
                 new Shoe("Under Armour", "HOVR Guardian", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-guardian-ct/pid3021243-104", R.drawable.female_hovr_guardian),
                 new Shoe("Under Armour", "HOVR Infinite Camo", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-infinite-camo/pid3022503-100", R.drawable.female_hovr_infinite_camo),
         };
+    }
+    public static String getTheUrl() {
+        return url;
     }
 
     public void removeFalses() {

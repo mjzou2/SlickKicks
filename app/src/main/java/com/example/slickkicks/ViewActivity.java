@@ -8,19 +8,16 @@ import android.webkit.WebViewClient;
 
 public class ViewActivity extends AppCompatActivity {
     private String string;
-
-    ViewActivity(String setString) {
-        string = setString;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
+        goIn(DisplayActivity.getTheUrl());
     }
-    public void goIn() {
+    public void goIn(String str) {
         WebView webView = findViewById(R.id.temp);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl(string);
+        webView.loadUrl(str);
     }
 
 
