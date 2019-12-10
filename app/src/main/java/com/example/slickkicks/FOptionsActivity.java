@@ -94,11 +94,26 @@ public class FOptionsActivity extends AppCompatActivity {
     public static boolean getU() {
         return u;
     }
+    public static boolean getB() {
+        return b;
+    }
     public static int getSize() {
         return size;
     }
     public static int getGender() {return 1;}
     public static int getPrice() {
         return price;
+    }
+    public static void setN(boolean newN) {
+        n = newN;
+    }
+    public static void setA(boolean newA) {
+        a = newA;
+    }
+    public static void setU(boolean newU) {
+        u = newU;
+    }
+    public static void setB(boolean newB) {
+        b = newB;
     }
 }

@@ -114,6 +114,9 @@ public class OptionsActivity extends AppCompatActivity {
     public static boolean getU() {
         return u;
     }
+    public static boolean getB() {
+        return b;
+    }
     public static int getSize() {
         return size;
     }
@@ -131,6 +134,9 @@ public class OptionsActivity extends AppCompatActivity {
     }
     public static void setU(boolean newU) {
         u = newU;
+    }
+    public static void setB(boolean newB) {
+        b = newB;
     }
     public static void setPrice(int newPrice) {
         price = newPrice;

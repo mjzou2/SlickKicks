@@ -197,6 +197,8 @@ public class DisplayActivity extends AppCompatActivity {
                     shoes[i] = null;
                 } else if (!(OptionsActivity.getU()) && shoes[i].getBrand().equals("Under Armour")) {
                     shoes[i] = null;
+                } else if (!(OptionsActivity.getB()) && shoes[i].getBrand().equals("New Balance")) {
+                    shoes[i] = null;
                 }
             }
         } else {
