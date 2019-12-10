@@ -144,9 +144,6 @@ public class DisplayActivity extends AppCompatActivity {
                 new Shoe("Under Armour", "HOVR SLK EVO", 110, "Female", "https://www.underarmour.com/en-us/womens-ua-hovr-slk-evo-sportstyle-shoes/pid3021461-102", R.drawable.female_hovr_slk_evo),
                 new Shoe("Under Armour", "HOVR Guardian", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-guardian-ct/pid3021243-104", R.drawable.female_hovr_guardian),
                 new Shoe("Under Armour", "HOVR Infinite Camo", 120, "Female", "https://www.underarmour.com/en-us/ua-w-hovr-infinite-camo/pid3022503-100", R.drawable.female_hovr_infinite_camo),
-
-                new Shoe("New Balance", "574 Core", 80, "Male", "https://www.newbalance.com/pd/574-core/ML574-EG.html?dwvar_ML574-EG_color=Grey", R.drawable.male_574_core),
-
         };
     }
     public static String getTheUrl() {
